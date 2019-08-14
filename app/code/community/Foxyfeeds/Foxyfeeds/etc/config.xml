@@ -1,0 +1,154 @@
+<?xml version="1.0"?><!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License (GPL 3)
+ * that is bundled with this package in the file LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Foxyfeeds_Foxyfeeds to newer
+ * versions in the future. If you wish to customize Foxyfeeds_Foxyfeeds for your
+ * needs please refer to http://www.foxyfeeds.com for more information.
+ *
+ * @category        Foxyfeeds
+ * @package         Foxyfeeds_Foxyfeeds
+ * @subpackage		etc
+ * @copyright       Copyright (c) 2012 <info@foxyfeeds.com> - www.foxyfeeds.com
+ * @author          Björn Wehner <info@foxyfeeds.com>
+ * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
+ * @link            http://www.foxyfeeds.com
+ */
+-->
+<config>
+	<modules>
+		<Foxyfeeds_Foxyfeeds>
+			<version>1.0.0</version>
+		</Foxyfeeds_Foxyfeeds>
+	</modules>
+	<global>
+        <index>
+            <indexer>
+                <foxyfeeds_feed_export>
+                    <model>foxyfeeds/feedexport_indexer</model>
+                </foxyfeeds_feed_export>
+            </indexer>
+        </index>
+		<models>
+			<foxyfeeds>
+				<class>Foxyfeeds_Foxyfeeds_Model</class>
+				<resourceModel>foxyfeeds_resource</resourceModel>
+			</foxyfeeds>
+			<foxyfeeds_resource>
+                <class>Foxyfeeds_Foxyfeeds_Model_Resource</class>
+				<entities>
+                    <product_feed_export_index>
+                        <table>foxyfeeds_product_feed_export_index</table>
+                    </product_feed_export_index>
+				</entities>
+			</foxyfeeds_resource>
+		</models>
+		<resources>
+			<default_setup>
+				<connection>
+					<charset>utf8</charset>
+				</connection>
+			</default_setup>
+			<foxyfeeds_setup>
+				<setup>
+					<module>Foxyfeeds_Foxyfeeds</module>
+				</setup>
+				<connection>
+					<charset>utf8</charset>
+					<use>core_setup</use>
+				</connection>
+			</foxyfeeds_setup>
+		</resources>
+		<blocks>
+			<foxyfeeds>
+				<class>Foxyfeeds_Foxyfeeds_Block</class>
+			</foxyfeeds>
+		</blocks>
+		<helpers>
+			<foxyfeeds>
+				<class>Foxyfeeds_Foxyfeeds_Helper</class>
+			</foxyfeeds>
+		</helpers>
+        <events>
+            <model_config_data_save_before>
+                <observers>
+                    <foxyfeeds_check_for_changed_export_data_fields>
+                        <type>singleton</type>
+                        <class>foxyfeeds/observer</class>
+                        <method>modelConfigDataSaveBefore</method>
+                    </foxyfeeds_check_for_changed_export_data_fields>
+                </observers>
+            </model_config_data_save_before>
+        </events>
+	</global>
+	<adminhtml>
+		<translate>
+			<modules>
+				<Foxyfeeds_Foxyfeeds>
+					<files>
+						<default>Foxyfeeds_Foxyfeeds.csv</default>
+					</files>
+				</Foxyfeeds_Foxyfeeds>
+			</modules>
+		</translate>
+        <layout>
+            <updates>
+                <Foxyfeeds_Foxyfeeds>
+                    <file>foxyfeeds.xml</file>
+                </Foxyfeeds_Foxyfeeds>
+            </updates>
+        </layout>
+	</adminhtml>
+	<frontend>
+		<routers>
+			<foxyfeeds>
+				<use>standard</use>
+				<args>
+					<module>Foxyfeeds_Foxyfeeds</module>
+					<frontName>foxyfeeds</frontName>
+				</args>
+			</foxyfeeds>
+		</routers>
+		<layout>
+			<updates>
+				<Foxyfeeds_Foxyfeeds>
+					<file>Foxyfeeds/foxyfeeds.xml</file>
+				</Foxyfeeds_Foxyfeeds>
+			</updates>
+		</layout>
+	</frontend>
+	<default>
+        <foxyfeeds_tracking>
+            <foxyfeeds_tracking>
+                <foxyfeeds_useTracking>0</foxyfeeds_useTracking>
+                <method>2</method>
+                <foxyfeeds_cookiemode>last</foxyfeeds_cookiemode>
+                <foxyfeeds_articlenumber>product_id</foxyfeeds_articlenumber>
+            </foxyfeeds_tracking>
+        </foxyfeeds_tracking>
+        <foxyfeeds_export>
+            <foxyfeeds_productfeed>
+                <foxyfeeds_export_method>1</foxyfeeds_export_method>
+                <foxyfeeds_useExport>0</foxyfeeds_useExport>
+                <product_url_generation_method>4</product_url_generation_method>
+            </foxyfeeds_productfeed>
+        </foxyfeeds_export>
+    </default>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Foxyfeeds_Foxyfeeds after="Mage_Adminhtml">Foxyfeeds_Foxyfeeds_Adminhtml</Foxyfeeds_Foxyfeeds>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

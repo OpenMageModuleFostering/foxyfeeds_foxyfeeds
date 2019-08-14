@@ -1,0 +1,214 @@
+<?xml version="1.0"?><!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License (GPL 3)
+ * that is bundled with this package in the file LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Foxyfeeds_Foxyfeeds to newer
+ * versions in the future. If you wish to customize Foxyfeeds_Foxyfeeds for your
+ * needs please refer to http://www.foxyfeeds.com for more information.
+ *
+ * @category        Foxyfeeds
+ * @package         Foxyfeeds_Foxyfeeds
+ * @subpackage		etc
+ * @copyright       Copyright (c) 2012 <info@Foxyfeeds.com> - www.foxyfeeds.com
+ * @author          Björn Wehner <info@foxyfeeds.com>
+ * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
+ * @link            http://www.foxyfeeds.com
+ */
+-->
+<config>
+	<tabs>
+		<foxyfeeds_config translate="label" module="foxyfeeds">
+			<label><![CDATA[<div style="overflow:hidden; background-image: url('https://go.foxyfeeds.com/css/gfx/logo.foxyfeeds.png');background-size: 70px; background-repeat: no-repeat; background-position: 0px 1px;"><div style="display:block; height: 20px;"></div></div>]]></label>
+			<class>tab-foxyfeeds</class>
+			<sort_order>401</sort_order>
+		</foxyfeeds_config>
+	</tabs>
+	<sections>
+		<foxyfeeds_tracking translate="label" module="foxyfeeds">
+			<label>FF Tracking</label>
+			<tab>foxyfeeds_config</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>2000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<hint>
+                    <frontend_model>foxyfeeds/adminhtml_hintlogo</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </hint>
+				<foxyfeeds_tracking translate="label">
+					<label>FF Tracking Settings</label>
+					<frontend_type>text</frontend_type>
+					<expanded>1</expanded>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<foxyfeeds_useTracking>
+							<label>FF Activate?</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_useTracking>
+                        <method>
+                            <label>FF Tracking Method</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>foxyfeeds/adminhtml_source_trackingmethod</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </method>
+						<foxyfeeds_cookiemode>
+							<label>FF Cookiemode</label>
+							<frontend_type>select</frontend_type>
+							<source_model>foxyfeeds/adminhtml_source_cookiemode</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_cookiemode>
+						<foxyfeeds_trackingkeys>
+							<label>FF Trackingkeys</label>
+							<frontend_model>foxyfeeds/adminhtml_field_trackingkeys</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_trackingkeys>
+                        <foxyfeeds_articlenumber>
+                            <label>FF Articlenumber</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>foxyfeeds/adminhtml_source_articlenumber</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </foxyfeeds_articlenumber>
+					</fields>
+				</foxyfeeds_tracking>
+			</groups>
+		</foxyfeeds_tracking>
+		<foxyfeeds_export translate="label" module="foxyfeeds">
+			<label>FF Data Feed Export</label>
+			<tab>foxyfeeds_config</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>3000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<hint>
+                    <frontend_model>foxyfeeds/adminhtml_hintlogo</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </hint>
+				<foxyfeeds_productfeed translate="label">
+					<label>FF Export Settings</label>
+					<frontend_type>text</frontend_type>
+					<expanded>1</expanded>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<foxyfeeds_useExport>
+							<label>FF Activate?</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_useExport>
+						<foxyfeeds_password translate="label">
+							<label>FF Password</label>
+							<comment>FF Protect your data feed with a password. For example: 'www.testshop.com/foxyfeeds?password=12345'</comment>
+							<frontend_type>password</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_password>
+                        <foxyfeeds_export_method>
+                            <label>FF Export Method</label>
+                            <comment>FF If you choose the indexed method, make sure that the 'Foxyfeeds Product Feed Export' index is always up to date. Please note, that if you select more than 40 data fields, that the indexed method will be used regardless of the selected option.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>foxyfeeds/adminhtml_source_exportmethod</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </foxyfeeds_export_method>
+                        <product_url_generation_method>
+                            <label>FF Product Url Generation Method</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>foxyfeeds/adminhtml_source_producturlgeneration</source_model>
+                            <sort_order>29</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_url_generation_method>
+						<foxyfeeds_exportfields>
+							<label>FF Select data fields</label>
+							<comment>FF Select the data fields you want to provide on Foxyfeeds. Some product attributes are always included. (Entity_Id, Sku, name, description, price, manufacturer, color, categories, product_url, image_url, additional_image_1, additional_image_2, additional_image_3, weight)</comment>
+							<frontend_model>foxyfeeds/adminhtml_field_exportfields</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_exportfields>
+						<foxyfeeds_specialexportfields>
+							<label>FF Create static data fields</label>
+							<comment>FF Set up additional data fields. These fields have for every product the same value. E.g. for additional delivery costs.</comment>
+							<frontend_model>foxyfeeds/adminhtml_field_specialfields</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_specialexportfields>
+						<foxyfeeds_replacefields>
+							<label>FF Product variant data fields</label>
+							<comment>FF Select the data fields you want to be overwritten by the respective value of the parent article.</comment>
+							<frontend_model>foxyfeeds/adminhtml_field_replacefields</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_replacefields>
+						<foxyfeeds_imagenumber>
+							<label>FF Number additional productimages</label>
+							<comment>FF How many additional productimages should be exported?</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>foxyfeeds/adminhtml_source_imagenumber</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</foxyfeeds_imagenumber>
+					</fields>
+				</foxyfeeds_productfeed>
+			</groups>
+		</foxyfeeds_export>
+	</sections>
+</config>

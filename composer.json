@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Foxyfeeds_Foxyfeeds",
+    "type": "magento-module",
+    "license": "GPL",
+    "homepage": "",
+    "description": "Foxy Feeds is a free cloud based solution for handling data feeds.",
+    "authors": [
+    {
+        "name": "FoxyFeeds",
+        "email": "info@foxyfeeds.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

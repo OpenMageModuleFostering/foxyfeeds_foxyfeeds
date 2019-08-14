@@ -1,0 +1,76 @@
+<?xml version="1.0"?><!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License (GPL 3)
+ * that is bundled with this package in the file LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Foxyfeeds_Foxyfeeds to newer
+ * versions in the future. If you wish to customize Foxyfeeds_Foxyfeeds for your
+ * needs please refer to http://www.foxyfeeds.com for more information.
+ *
+ * @category        Foxyfeeds
+ * @package         Foxyfeeds_Foxyfeeds
+ * @subpackage		etc
+ * @copyright       Copyright (c) 2012 <info@foxyfeeds.com> - www.foxyfeeds.com
+ * @author          Björn Wehner <info@foxyfeeds.com>
+ * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
+ * @link            http://www.foxyfeeds.com
+ */
+-->
+<config>
+    <menu>
+        <system translate="title" module="adminhtml">
+            <children>
+                <convert>
+                    <children>
+                        <ff_product_feed_export translate="title" module="foxyfeeds">
+                            <title>FF Foxyfeeds Product Feed Export</title>
+                            <action>adminhtml/foxyfeeds_feedexport</action>
+                            <sort_order>100</sort_order>
+                        </ff_product_feed_export>
+                    </children>
+                </convert>
+            </children>
+        </system>
+    </menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+                            <convert>
+                                <children>
+                                    <ff_product_feed_export>
+                                        <title>FF Foxyfeeds Product Feed Export</title>
+                                        <sort_order>100</sort_order>
+                                    </ff_product_feed_export>
+                                </children>
+                            </convert>
+							<config>
+								<children>
+									<foxyfeeds_general translate="title" module="foxyfeeds">
+										<title>foxyfeeds_general Section</title>
+										<sort_order>100</sort_order>
+									</foxyfeeds_general>
+									<foxyfeeds_tracking translate="title" module="foxyfeeds">
+										<title>foxyfeeds_tracking Section</title>
+										<sort_order>200</sort_order>
+									</foxyfeeds_tracking>
+									<foxyfeeds_export translate="title" module="foxyfeeds">
+										<title>foxyfeeds_export Section</title>
+										<sort_order>300</sort_order>
+									</foxyfeeds_export>
+								</children>
+							</config>
+						</children>
+					</system>
+			   </children>
+		   </admin>
+	   </resources>
+	</acl>
+</config>

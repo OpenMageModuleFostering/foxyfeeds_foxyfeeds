@@ -1,0 +1,43 @@
+<?xml version="1.0"?><!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License (GPL 3)
+ * that is bundled with this package in the file LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Foxyfeeds_Clicktracking to newer
+ * versions in the future. If you wish to customize Foxyfeeds_Clicktracking for your
+ * needs please refer to http://www.foxyfeeds.com for more information.
+ *
+ * @category        Foxyfeeds
+ * @package         design_frontend_base_default
+ * @subpackage      layout_Foxyfeeds
+ * @copyright       Copyright (c) 2012 <info@foxyfeeds.com> - www.foxyfeeds.com
+ * @author          Björn Wehner <info@foxyfeeds.com>
+ * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
+ * @link            http://www.foxyfeeds.com
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="after_body_start">
+            <block type="foxyfeeds/tracking_tracking" name="cptracking" as="cptracking" template="Foxyfeeds/tracking_image.phtml" />
+        </reference>
+        <reference name="head">
+            <block type="foxyfeeds/tracking_tracking" name="clicktracking" as="clicktracking" template="Foxyfeeds/clicktracking_js.phtml" />
+        </reference>
+    </default>
+
+    <checkout_onepage_success>
+        <reference name="cptracking">
+            <action method="setIsSale"><param>1</param></action>
+        </reference>
+        <reference name="head">
+            <remove name="clicktracking" />
+            <block type="foxyfeeds/tracking_tracking" name="salestracking" as="salestracking" template="Foxyfeeds/salestracking_js.phtml" />
+        </reference>
+    </checkout_onepage_success>
+</layout>
